@@ -18,7 +18,6 @@ A full-featured React date range picker with preset sidebar, optional time &amp;
 - **Custom presets** — pass any `DateRangePreset[]` array
 - **Custom date format** — any `date-fns` format string via `dateFormat`
 - **WCAG 2.2 AA** — ARIA labels, live regions, keyboard navigation, focus management
-- **`PresetDateRangePicker`** — lightweight variant: preset list → immediate apply, "Custom" opens 2-month calendar
 
 ---
 
@@ -149,21 +148,6 @@ const myPresets: DateRangePreset[] = [
 />
 ```
 
-### Lightweight variant: `PresetDateRangePicker`
-
-```tsx
-import { PresetDateRangePicker } from "@/components/ui/super-date-range-picker";
-
-<PresetDateRangePicker
-  defaultPreset="2months"
-  onApply={(range) => console.log(range)}
-/>
-```
-
-Presets apply immediately (no Apply/Cancel step). Selecting "Custom" opens a 2-month calendar; picking two dates auto-closes the popover.
-
----
-
 ## API Reference
 
 ### `SuperDateRangePicker`
@@ -198,16 +182,6 @@ Presets apply immediately (no Apply/Cancel step). Selecting "Custom" opens a 2-m
 | `aria-describedby` | `string` | — | ID of an element describing the picker. |
 | `id` | `string` | — | ID forwarded to the trigger button. |
 | `className` | `string` | — | Extra class names for the wrapper. |
-
-### `PresetDateRangePicker`
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `defaultPreset` | `string` | `"2months"` | Initial preset key. |
-| `presets` | `DateRangePreset[]` | `DEFAULT_PRESETS` | Custom preset list. |
-| `onApply` | `(value: SuperDateRangeValue) => void` | — | Called when the committed range changes. |
-| `align` | `"start" \| "center" \| "end"` | `"start"` | Popover alignment. |
-| `className` | `string` | — | Extra class names. |
 
 ### Types
 

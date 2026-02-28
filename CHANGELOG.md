@@ -35,12 +35,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Keyboard: Escape closes and returns focus; full calendar keyboard navigation
   - Focus moves to first preset (or start input) on open; returns to trigger on close
 
-**`PresetDateRangePicker`** — lightweight preset-first variant
-
-- Preset list as default view; immediate apply on selection (no Apply/Cancel step)
-- "Custom" option switches to a 2-month calendar; auto-closes after two clicks
-- Supports custom presets and `defaultPreset`
-
 **`useThreeClickRangeState`** hook (exported from `calendar.tsx`)
 
 - Manages 3-click anchor/commit range state with hover preview
