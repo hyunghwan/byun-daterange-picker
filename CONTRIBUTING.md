@@ -9,15 +9,15 @@ Thank you for your interest in contributing! This document outlines the process 
 ### Prerequisites
 
 - Node.js 20+
-- npm 10+
+- pnpm 10+
 
 ### Local setup
 
 ```bash
 git clone https://github.com/hyunghwan/byun-daterange-picker.git
 cd byun-daterange-picker
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the demo.
@@ -83,11 +83,19 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 - Follow the existing naming conventions (PascalCase for components, camelCase for functions)
 - Use design tokens — never hardcode color or spacing values
 - All user-facing strings should follow sentence case
+- Use the project ESLint flat config (`eslint.config.mjs`) for linting
+
+### CI policy
+
+- Pull requests and pushes to `main` run CI checks (`lint`, `typecheck`, `build`)
+- Keep PRs green before requesting review to avoid deployment regressions
+- `eslint` is intentionally pinned to v9 for plugin peer compatibility with the current Next.js lint stack
 
 ### Before submitting
 
-- Run `npm run lint` and fix any errors
-- Run `npm run build` to confirm the project builds successfully
+- Run `pnpm run lint` and fix any errors
+- Run `pnpm run typecheck`
+- Run `pnpm run build` to confirm the project builds successfully
 - Test your changes in both light and dark mode
 - Verify keyboard navigation works
 
