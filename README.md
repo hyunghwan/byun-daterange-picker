@@ -44,7 +44,7 @@ lib/utils.ts
 ### 2. Install dependencies
 
 ```bash
-npm install date-fns react-day-picker lucide-react cmdk \
+pnpm add date-fns react-day-picker lucide-react cmdk \
   @radix-ui/react-popover @radix-ui/react-dialog \
   @radix-ui/react-separator @radix-ui/react-switch \
   @radix-ui/react-slot class-variance-authority \
@@ -269,13 +269,41 @@ This component targets **WCAG 2.2 Level AA** compliance:
 
 ## Running the demo locally
 
+Prerequisites: Node.js 20+ and pnpm 10+.
+
 ```bash
 git clone https://github.com/hyunghwan/byun-daterange-picker.git
 cd byun-daterange-picker
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 # Open http://localhost:3000
 ```
+
+---
+
+## Development checks
+
+```bash
+pnpm run lint
+pnpm run typecheck
+pnpm run build
+```
+
+---
+
+## Deploying to Vercel (Git integration)
+
+This project is configured for **static export** (`output: "export"`) and can be deployed on Vercel through Git integration.
+
+1. Import this repository into Vercel.
+2. Keep the framework preset as **Next.js**.
+3. Vercel will use the repository config in [`vercel.json`](vercel.json):
+   - Install command: `pnpm install --frozen-lockfile`
+   - Build command: `pnpm run build`
+4. Every pull request gets a **Preview deployment**.
+5. Merges to `main` trigger **Production deployment**.
+
+This repository includes a CI workflow (`.github/workflows/ci.yml`) that runs lint, type-check, and build on PRs/pushes to `main`.
 
 ---
 
@@ -285,13 +313,13 @@ npm run dev
 |---------|---------|---------|
 | [shadcn/ui](https://ui.shadcn.com) | — | UI component foundation |
 | [Radix UI](https://radix-ui.com) | ^1.x | Accessible primitive components |
-| [react-day-picker](https://react-day-picker.js.org) | ^9.11 | Calendar engine |
+| [react-day-picker](https://react-day-picker.js.org) | ^9.14 | Calendar engine |
 | [date-fns](https://date-fns.org) | ^4.1 | Date utilities |
 | [cmdk](https://cmdk.paco.me) | ^1.1 | Command palette (timezone search) |
 | [Tailwind CSS](https://tailwindcss.com) | ^4 | Utility-first CSS framework |
-| [Lucide React](https://lucide.dev) | ^0.522 | Icon library |
+| [Lucide React](https://lucide.dev) | ^0.575 | Icon library |
 | [class-variance-authority](https://cva.style) | ^0.7 | Component variant management |
-| [tailwind-merge](https://github.com/dcastil/tailwind-merge) | ^3.3 | Smart Tailwind class merging |
+| [tailwind-merge](https://github.com/dcastil/tailwind-merge) | ^3.5 | Smart Tailwind class merging |
 | [clsx](https://github.com/lukeed/clsx) | ^2.1 | Conditional class names |
 
 ---
